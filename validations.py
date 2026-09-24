@@ -9,3 +9,10 @@ def validate_price(price):
         raise ValueError("El precio debe ser mayor a cero.")
     return price
 
+def validate_status(status):
+    allowed = ["disponible", "reservada", "vendida"]
+    status = status.strip().lower()
+    if status not in allowed:
+        raise ValueError("Estado inválido.")
+    return status
+

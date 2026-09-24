@@ -16,3 +16,8 @@ def validate_status(status):
         raise ValueError("Estado inválido.")
     return status
 
+def validate_description(description):
+    desc = description.strip().lower()
+    if "usada" not in desc and "certificada" not in desc:
+        raise ValueError("La descripción debe contener 'usada' o 'certificada'.")
+    return desc
